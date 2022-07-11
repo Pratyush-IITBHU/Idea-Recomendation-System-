@@ -5,7 +5,7 @@
 "https://user-images.githubusercontent.com/78396437/178341873-22434747-15b6-4bea-a273-877ceac2eb0e.png" 
          alt="Dronetech logo" 
          align="right" 
-         width="200">
+         width="300">
 
 
 
