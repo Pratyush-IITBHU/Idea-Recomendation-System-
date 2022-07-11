@@ -1,7 +1,23 @@
+
+
+<div>
+<img src=
+"https://user-images.githubusercontent.com/78396437/178341873-22434747-15b6-4bea-a273-877ceac2eb0e.png" 
+         alt="Dronetech logo" 
+         align="right" 
+         width="200">
+
+
+
 ## <ins>Recomendation Systems<ins> 
 
 - This repository contain some recomendation systems based on **cosine similarity(dot product)** concept.
-- Dot product of feature vectors is evaluted for finding the similairities between the vectors and hence between the feilds given in data. 
+- Dot product of feature vectors is evaluted for finding the similairities between the vectors and hence between the feilds given in data.
+
+<div align="center">
+<img src= "https://user-images.githubusercontent.com/78396437/178341524-bdc3b55e-8a11-4f2a-9a84-6de8f46f7ad7.png" alt="Drone" align="center" width="390">
+</div>
+
 
 #### Completed Projects:
 
