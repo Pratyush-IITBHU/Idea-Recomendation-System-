@@ -1,151 +1,122 @@
-Name,Project_Name,Year,Views,Likes,Topics,Popularity,Status,Institute/school/job,Name_of_institute/school/job
-Rohan Saha,
-Pradeep mishra,
-Preeti Sarwa,
-Abhinav Kumar,
-Revanth,
-Ratan Dilkhush,
-Abhay Singh,
-Shanta Bedi,
-Abhay singh chauhan,
-Raghav Krishna,
-Anmol Dwiwedi, 
-Navya Desai,
-Wen Jian,
-Zhou He,
-Piyush Verma, 
-Prashant Tiwari,
-Ankur Dwiwedi, 
-Ren Fan,
-Mohmmad Yusuf Khan, 
-Shri Bihari,
-Vansh Malhotra, 
-Aditi Soni, 
-Rashmi Nazareth,
-Anurag Sonkar,
-Clara Stanley,
-Rajat Maurya,
-Naushin Fatima,
-Anuj Kumar,
-Akanksha Mathur,
-Suryansh Yadav, 
-Apurva Srivastava,
-Vishal Thakur,
-Adarsh Sandilya,
-Abhay Singh Kushwah,
-Sanidya Taparia,
-Byron Robertson,
-Harsh Mahesheka,
-Dipa Dass,
-Ansh Verma,
-Akshi Dara,
-Mahendra Rana, 
-A. Sai Susritha,
-Prakhar Jain, 
-Pratyush Chauhan, 
-Shalini Sihag, 
-Reyansh Sunder,
-Sudhir Dubey,
-Isha Patil,
-Sudhir Dubey,
-Stepan Grigorev,
-Arina Zaytseva,
-Trishna Sahota,
-Advik Parikh,
-Nitya Chander,
-Sai Hayre,
-Kira Osipova,
-Diksha Biswas,
-Caesar Barnett,
-Alanna Joseph,
-Dipali Sen,
-Varsha Keer,
-Ryka Banerjee,
-Wynne Schuman,
-Aniket Sura,
-Kamala Aggarwal,
-Prokopiy Volkov,
-Ryka Banerjee,
-Mabel Woolery,
-Zoya Mutti,
-Karishma Kalla,
-Rishima Date,
-Julia Wheeler,
-Tara Maharaj,
-Kajal Chander,
-Ishani Mann,
-Xiong Huan,
-Sanjit Chacko,
-Lila saxena ,
-Varsha Deshmukh,
-Kamini Anne,
-Rajesh Bir,
-Aapti Hegde,
-Devadas Dugal,
-Minakshi Natarajan,
-Rudra Shenoy,
-Ajit Patla,
-Kliment Sokolo,
-Hari Mehrotra,
-Neil Howell,
-Darshana Dada,
-Aruna Gokhale,
-Tanvi Palan,
-Dwight Graves,
-Chanda Rajagopal,
-Jagan Dass,
-Reva Ramakrishnan,
-Kirtida Patel,
-Pratap Ratti,
-Sonam Sule,
-Henna Dube,
-Kelsey Cantrell,
-Ananya Ram,
-Diksha Nagy,
-Arundhati Butala,
-Neil Howell,
-Brad Dinwiddie,
-Minerva Chavez,
-Mina Luthra,
-Sushila Date,
-Krishna Bhatnagar,
-Oliver Fitzgerald,
-Charu Nair,
-Shanaya Bali,
-Talika Mathur,
-Sima Chanda,
-Abhay Goda,
-Asmita Chawla,
-Ritu Nigam,
-Rashmi Bala,
-Parvati Ray,
-Aruna Kaul,
-Shivansh Taneja,
-Anusha Ramachandran,
-Reyansh Dave,
-Ritika Narang,
-Vimal Prashad,
-Adah Korpal,
-Padma Savant,
-Sakshi Kalla,
-Kamakshi Dosh,
-Nitya Khosla,
-Jayesh Mandal,
-Tanvi Palan,
-Asmita Chawla,
-Prasanna Vaidya,
-Azad Murty,
-Mehul Prakash,
-Richa Pathak,
-Niraj Grover,
-Manu Dubey,
-Diksha Soni,
-Dayaram Kant,
-Gaurav Bhakta,
-Anit Nath,
-Diksha Nagy,
-Jayesh Dewangan,
-Nama goyal,
-Tushar Verma ,
-Disha Kumari,
-Tamanna Aurora,
+Name,Project_Name,Topics,Year,Views,Likes,Popularity,Status,school/institute/job,Name_of_institute/school/job
+Rohan Saha,Visualising and forecasting stocks using Dash,"['Dash python','Data visualisations','matplotlib','pandas','Machine Learning','web development','HTML','CSS','UI/UX']",2016,107,37,71,1,2
+Pradeep mishra,Multiplayer Game - Connect4,"['python','Pygame','Game Development','OOPs','DSA','Game Engine','Networking','Socket Communication']",2016,80,21,48,1,1
+Preeti Sarwa,YouTube Transcript Summarizer,"['web development','HTML','CSS','javascript','python','Flask','NLP','deep learning','sk-learn','pandas','keras']",2016,110,31,69,1,1
+Abhinav Kumar,CLI Based Chat Tool,"['python','Socket Programming','Multithreading']",2016,156,12,35,4,1
+Revanth,Instagram Automation Tool,"['web development','python','HTML','CSS','Selenium','Automation']",2016,78,18,56,3,1
+Ratan Dilkhush,Disease Prediction,"['machine learning','Django','CSS','HTML','web development','Git','sk-learn','pytorch','Biology']",2016,93,37,72,2,1
+Abhay Singh,Discord bot for stocks,"['Pandas','Plot.ly']",2016,32,15,38,2,0
+Shanta Bedi,WhatsApp APK for stickers,"['Selenium','python','android']",2016,56,10,41,3,1
+Abhay singh chauhan,Chatbot Song Recommender System,"['python','API','Chatbot','Machine Learning','Heroku','AI']",2016,60,29,77,3,1
+Raghav Krishna,Contact App Android,"['Java','android','SQLite']",2016,81,42,51,2,0
+Anmol Dwiwedi,Notes & Password Manager,"['Java','OOPs','Android','Firebase']",2016,21,5,45,4,1
+Navya Desai,QuizUp - A Quiz Application,"['Java','Android','Firebase','Data Handling','SQL']",2017,38,9,23,3,1
+Wen Jian,House Price Prediction,"['python','Basic statistics','data visualization','Data Preprocessing','Model Implementation','supervised learning','sk-learn','pandas','matplotlib','regression']",2017,90,31,94,2,2
+Navya Desai,bFit-A Cognitive Game,"['Java','Multithreading','Android','Splash screens','App Development']",2017,63,36,37,3,1
+Zhou He,Instagram Clone,"['Kotlin','Firebase']",2017,30,13,48,4,1
+Piyush Verma,A Hyperlocal Ecommerce platform,"['flutter','Dart','javascript','Firebase','App Development','API']",2017,69,11,31,3,1
+Prashant Tiwari,Companion App: A mental health tracker built using flutter and Firebase,"['flutter','Heroku','Firebase','UI/UX','Machine learning','Mobile App Development','Cloud Firestore','Authentication','AI']",2017,90,34,77,2,1 
+Ankur Dwiwedi,Library Management System,"['web development','Django','mySQL','HTML','CSS','javascript','bootstrap','SQL']",2017,179,45,58,2,1
+Ren Fan,Line Following Robot using ROS with Raspberry Pi,"['ROS','MATLAB','Raspberry Pi','python','obstacle avoidance']",2017,125,46,89,1,2
+Mohmmad Yusuf Khan,Breakout Ball Game,"['Java','Java Swing','Java AWT','JFrame','JPanel']",2017,13,3,34,2,1
+Shri Bihari,Word Transduction,"['Deep learning','Neural Networks','Transformer Model','BPE','pytorch']",2017,74,34,71,1,1
+Vansh Malhotra, City Health and Education based Web application,"['HTML','CSS','javascript','bootstrap']",2017,32,20,47,2,1
+Aditi Soni,CV Generator Web Application,"['Django','Git','HTML','CSS','javascript','web development']",2017,78,20,41,2,1
+Rashmi Nazareth,Exploratory Analysis of Geolocational Data,"['python','Machine learning','Data processing','REST API','Data Preparation','Data Visualisation','seaborn','pandas','unsupervised learning','K-Means Clustering','classification']",2017,99,37,75,2,2
+Anurag Sonkar,Customer Relationship Manager,"['Java','HTML','CSS','web development','Spring','Framework','Spring Core','Spring MVC','JDBC','ORM framework','Maven','HTTP','SQL','mySQL']",2017,71,15,26,1,1
+Clara Stanley,Library Management System,"['Java','API','Serialization','Deserialization']",2017,176,16,34,2,1
+Rajat Maurya, Rat in a Maze,"['javascript','react','Data Structure and algorithm','DSA','alogorithms','react','backtracking','recursion','problem Solving','web development']",2017,132,31,46,2,2
+Naushin Fatima,Slack clone using react,"['react','react-Redux','web development','web application','website hosting','firebase']",2017,17,5,49,2,1
+Anuj Kumar,TinyMCE Synonyms Plugin,"['HTML','CSS','javascript','web development','Plugin development']",2018,43,20,39,2,2
+Akanksha Mathur,Authentication in node.js for a web app,"['javascript','express','Authentication','JWT','Middlewares']",2018,87,23,38,4,1
+Suryansh Yadav, Sorting Visualizer,"['HTML','CSS','javascript','sorting','algorithm','web development','web application','web Hosting']",2018,128,30,50,3,1
+Apurva Srivastava,OurApp - a social media web app in nodejs,"['HTML','CSS','javascript','nodejs','express','MongoDB','Template Engine','EJS','Heroku']",2018,65,29,47,3,1
+Vishal Thakur,YouTube Transcript Summarizer,"['HTML','CSS','javascript','python','Flask','NLP','machine learning','deep learning','sk-learn','keras']",2018,147,37,76,2,2
+Adarsh Sandilya,Online Code Editor ,"['HTML','CSS','react','web development','Website hosting']",2018,127,34,43,1,1
+Abhay Singh Kushwah,Codechef Notifier,"['javascript','Chrome','Developer Tools','Asynchronous javascript','Chrome extension API','API']",2018,195,43,32,1,1
+Sanidya Taparia,Amazon clone using react,"['HTML','CSS','javascript','react','Stripe','Firebase','web development']",2018,84,26,42,1,0
+Rajesh Bir,E-Commerce Web Application,"['Django','Django','Django REST Framework','HTML','CSS','javascript','Jquery','Git']",2018,23,8,37,1,1
+Harsh Mahesheka,Machine Learning Preprocessing CLI,"['python','OOPS','Exception Handling','Data processing','data visualisation','pandas','seaborn','sk-learn']",2018,142,39,79,1,2
+Dipa Dass,SLAM robot using jetson nano and ROS,"['path planning','obstacle avoidance','SLAM','ROS','jetson','arduino','gazebo']",2018,193,34,96,1,1
+Ansh Verma,INTAL - INTegers of Arbitrary Length,"['Arrays','Basic Mathematics','C','C++','BigIntegers']",2018,108,21,29,2,0
+Akshi Dara,Customer Relationship Manager,"['Java','HTML','CSS']",2018,93,25,52,3,1
+Mahendra Rana, Mobile Robotic Arm using PHIRO + Arduino,"['arduino','PHIRO','android','app','robotics','bluetooth']",2018,176,43,91,1,1
+A. Sai Susritha,Open Thermal Camera,"['hardware','sofware','thermal','Camera','infrared','IR','CAD','sensor']",2018,162,46,93,1,1
+Prakhar Jain,CUDA-Accelerated Non-Dominated Sorting for MOOPs,"['sorting','algorithm','CUDA','C++','GPU']",2018,154,12,32,2,1 
+Pratyush Chauhan,Exponent Arm,"['ROS','3D printing','computer vision','mechanical design','mechanical','electronics','micro controllers','RViz']",2019,122,44,90,1,1
+Shalini Sihag,Rhidam Music Library | Django Web App,"['CSS','HTML','python','mySQL','SQL','Django']",2019,111,30,44,3,1
+Reyansh Sunder,Water Purification Coagulator Kit & STEM Program,"['STEM','education','electrocoagualiation']",2019,187,49,37,2,0
+Sudhir Dubey,Secure Voting System,"['blockchain','javascript']",2019,92,10,15,2,1
+Isha Patil,An Attention and Transfer learning based Part-Of-Speech Tagger,"['tranfer learning','tensorflow','pytorch','pandas','keras','matplotlib']",2019,136,39,88,2,1
+Sudhir Dubey,Mechwarrior 4 Simulator Cockpit Panel,"['hardware','simulator','mechanical','robotics','Game','digital electronics']",2019,149,48,97,1,1
+Dipali Sen,IT Workshop -II | Djungle,"['python','Django','framework','mySQL','interface']",2019,164,32,40,3,1
+Arina Zaytseva,Weather Forecasting App,"['PyOWM','Streamlit','matplotlib','data visualization']",2019,181,40,66,2,1
+Trishna Sahota,Coding-Cartel Chrome extension,"['chrome','internet','web3','HTML','CSS']",2019,47,12,53,3,1
+Advik Parikh,High Utility Itemset Mining,"['C++','algorithm','graph','DAS']",2019,53,21,29,2,1
+Nitya Chander,Web scraping Facebook bot,"['Selenium','python']",2019,17,10,41,3,1
+Sai Hayre,Covid-19 Dashboard,"['Django','Plotly','Beautiful Soup','mySQL']",2019,11,3,44,3,1
+Kira Osipova,Multi-depot Vehicle routing problem,"['python','Graph','Dynamic Programming']",2019,13,2,27,2,1
+Diksha Biswas,Detection and Labelling of Wandering Patterns in people with Dementia,"['DCNN','CNN','neural network','deep learning','python','algorithm','DSA']",2019,119,37,73,2,2
+Varsha Keer,Retropie: Full guide for Raspberry Pi,"['Retropie','retro','Raspberry Pi','Game']",2019,127,46,87,1,2
+Wynne Schuman,python interpreter,"['python','C++','Infix expression evaluation','Lookup tables','String parsing']",2019,133,34,37,2,0
+Aniket Sura,take down,"['C++','C#','unity','AI','path planning','path finding','Game']",2019,61,48,90,1,1
+Kamala Aggarwal,FuzzyURLs,"['Git','python Basics','Django','MongoDB','MongoDB','Heroku']",2019,15,5,44,3,1
+Ryka Banerjee,Performance of Public and Private Mutual Funds,"['analytics','business','mutual funds','python','asset','finance']",2019,80,23,61,3,2
+Mabel Woolery,Kali linux Begginers hacking,"['linux','Kali','hacking','software','IOS']",2019,22,6,37,3,1
+Zoya Mutti,Xcode for Windows: Develop iOS Apps,"['IOS','app development','software','Xcode','Cloud']",2019,50,26,37,3,1
+Karishma Kalla,STEM Education Delta Robot,"['STEM','router','arduino','servo','robot','Education']",2019,57,29,37,2,0
+Tara Maharaj,ICICI Prudential Life Insurance: The Importance of a Strong Brand Image,"['marketing','investment','business','research','company','brand']",2019,78,24,65,4,2
+Kajal Chander,Space saving robot vacuum cleaner garage,"['CAD','robot','nodejs','Cloud','3D printing','vacuum','L298N','sensor','obstacle avoidance']",2019,71,22,88,1,1
+Xiong Huan,Kame-ESP8266 based quadruped,"['arduino','ESP32','servo','robot','quadruped','mechanical','CAD']",2019,20,4,97,1,1
+Sanjit Chacko,Design business plan for distributing insurance to customers,"['business','market','python','analytics','data visualisation','data processing','API']",2019,38,21,68,3,2
+Varsha Deshmukh,color recognition on myCobot,"['OpenCV','ROS','python','arm','robot','position calculation','RViz','hardware']",2020,83,32,96,1,1
+Aapti Hegde,ROS2 For Unity,"['unity','Game','ROS','linux','ubuntu']",2020,47,21,48,1,1
+Devadas Dugal,Generative Models Using PyTorch Autoencoders,"['pytorch','encoder','colab','GPU','model']",2020,101,34,77,1,1
+Minakshi Natarajan,dark matter estimation,"['astronomy','python','science','STEM','data processing','data filtering','physics']",2020,92,49,37,2,0
+Ajit Patla,Forecasting Business KPI's with Tensorflow and python,"['business','marketing','tensorflow','keras']",2020,65,23,66,3,2
+Kliment Sokolo,IoT Project-Learn to design an IoT Ready Infrastructure,"['IoT','MQTT','architectures','SmartPipe','Sensor chains']",2020,182,54,12,2,2
+Hari Mehrotra,Machine Learning or Predictive Models in IoT - Energy Prediction Use Case,"['IoT','machine learning','predictions','RFE','SVM','sk-learn','visualisation']",2020,191,37,76,2,2
+Darshana Dada,self_balancing bot,"['python','pybullet','LQR','PID','sensor','reinforcement learning','DQN']",2020,174,34,67,4,1
+Aruna Gokhale,solar flare detection,"['python','astronomy','stellar physics','machine learning','matplotlib','pandas','data processing']",2020,39,49,37,2,0
+Tanvi Palan,stoke opia,"['business','marketing','HTML']",2020,26,10,69,1,2
+Chanda Rajagopal,Gesture controlled robot using ROS,"['drone','ROS','gesture','recognition','deep learning','computer vision','gazebo']",2020,52,24,96,1,1
+Jagan Dass,astro-neista,"['astronomy','stars','kotlin','android','Java']",2020,16,9,37,2,0
+Reva Ramakrishnan,hydraulic-lift,"['arm','hardware','hydraulics']",2020,6,0,92,2,1
+Kirtida Patel,string current analysis of PV modules,"['electronics','hardware','engineering']",2020,34,12,91,1,1
+Pratap Ratti,Ground station for LoRa satellites,"['TinyGS','lora','hardware','satellites','ESP32','firmware','server','electronics']",2020,56,12,90,1,1
+Sonam Sule,Time lock Wallet,"['blockchain','solidity','Ethereum','smart-contracts','crypto']",2020,59,12,18,2,1
+Neil Howell,Multipurpose BLE touchpad HID,"['arduino','ESP32','blender','keyboard','wifi']",2020,76,34,99,2,1
+Krishna Bhatnagar,Savings and Lending Application,"['nodejs','blockchain','solidity','Ethereum']",2020,51,32,19,2,1
+Charu Nair,StarPointer - electronics Finderscope,"['electronics','finderscope','astronomy','research','stellarium','hardware']",2020,31,9,37,2,0
+Shanaya Bali,Decentralized Cryptocurrency Exchange,"['react','Angular','Django','blockchain','bitcoin','crypto','coinbase','btc']",2020 ,12,2,14,2,1
+Talika Mathur,Drone simulation using Gazebo and ROS,"['drone','ROS','gazebo','SLAM','obstacle avoidance','senor']",2020,70,34,99,1,1
+Sima Chanda,Blockchain Wallet,"['HTML','javascript','web3','blockchain','CSS']",2020,10,1,11,1,1
+Asmita Chawla,gCore - For GUI-based gadgets,"['ESP32','GUI','gadjet','FABGL']",2020,2,0,91,2,2
+Ritu Nigam,Camping Web Application,"['nodejs','express Framework','HTML','CSS','bootstrap','javascript','MongoDB','RESTful Routing']",2020,1,0,46,3,1 
+Rashmi Bala,Pathfinding Visualizer,"['BFS','algorithm','HTML','CSS','javascript','DOM']",2021,34,12,32,2,1
+Parvati Ray,Feedback App,"['react','javascript','Context API']",2021,11,11,31,3,1
+Aruna Kaul,python Module to Handle GitHub Repositories of an Organisation,"['HTTP','python','API']",2021 ,50,11,31,3,1
+Shivansh Taneja,Money Splitting Web Application,"['Django','Graphs','algorithm','DSA','SQL']",2021,23,12,32,2,1
+Anusha Ramachandran,Multiporpose house-hold bot,"['ROS','gazebo','path planning','obstacle avoidance','navigation stack','deep learning','YOLO','computer vision']",2021,54,11,94,2,1
+Ritika Narang,Digital Asset Marketplace (DAM),"['crypto','web3','react','Ethereum']",2021,12,1,15,2,1
+Vimal Prashad,Flexible Smartwatch,"['display','hardware','biology','health','touch screen']",2021,34,12,83,2,0
+Adah Korpal,Human Action Recognition (HAR) Dataset,"['python','computer vision','deep learning','tranfer learning','fine tuning','pytorch','OpenCV','image recognition']",2021,67,23,69,2,1
+Padma Savant,Peer To Peer Carpooling,"['blockchain','python']",2021,78,45,16,2,1
+Kamakshi Dosh,Fake Product Identification System,"['nodejs','mySQL','android','bootstrap','express','html','hackathon','CSS','Ethereum','supply-chain','solidity','anti-counterfeit']",2022,87,10,15,2,1
+Nitya Khosla,Multi-Send,"['solidity','Ethereum']",2022,71,10,15,2,1
+Jayesh Mandal,transformers,"['research','deep learning','python']",2022,17,3,70,2,1
+Tanvi Palan,Speeduino,"['arduino','ECU','EMS','hardware']",2022,3,0,83,2,1
+Asmita Chawla,estimation of rate of expansion,"['astronomy','astrophysics','physics','python','data processing','research']",2022,56,29,37,2,0
+Prasanna Vaidya,Polling System,"['blockchain','web3','Ethereum']",2022,12,3,13,2,1
+Azad Murty,HaGRID - HAnd Gesture Recognition Image Dataset,"['python','image recognition','computer vision','pytorch','gesture','hand']",2022,65,43,71,2,1
+Mehul Prakash,human deisease analysis,"['biology','science']",2022,87,49,37,2,0
+Richa Pathak,documento,"['markdown','documentation','techniques']",2022,31,5,8,2,1
+Manu Dubey,3D Printable Robot Arm,"['3D printing','robot','arm','arduino','hardware']",2022,6,1,85,1,1
+Diksha Soni,aerotransport,"['Automation','path planning','electronics','hardware','micro controllers']",2022,76,12,83,2,1
+Gaurav Bhakta,TensorFlow Lite for Commodore 64s,"['AI','machine learning','retro','TensorFlow']",2022,21,7,76,2,2
+Anit Nath,Complete IoT programming and building course,"['hardware','STEM','software','Education']",2022,154,49,37,2,0
+Niraj Grover,Nonlinear Mechatronic Cube,"['hardware','MATLAB','PID','LQR','embedded system','STM32F4','IMU','micro','micro processing']",2022,153,42,83,2,1
+Jayesh Dewangan,Data-Theft-Detecting Router & Server,"['Raspberry Pi','server','router','NSA','linux','privacy','security','whitehat']",2022,145,42,78,2,1
+Nama goyal,Wild Onion - Free Anonymous Net,"['wifi','internet','TOR','software']",2022,123,34,99,2,1
+Tushar Verma,moosync,"['recommendation','machine learning','music','python','sk-learn']",2022,254,37,76,2,2
+Tamanna Aurora,Photogrammetry 3D Scanning,"['3D printing','3D scanning','software','Photogrammetry','VisualSFM','meshmixer','meshlab']",2022,170,49,89,1,1

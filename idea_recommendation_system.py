@@ -5,6 +5,7 @@ import re
 import sys
 import itertools
 import warnings
+from tabulate import tabulate
 warnings.filterwarnings("ignore")
 from sklearn.feature_extraction.text import TfidfVectorizer
 from sklearn.metrics.pairwise import cosine_similarity
@@ -14,39 +15,28 @@ from collections import defaultdict
 
 class recommendation_system:
     
-    def read_data(self , user_type_input):
+    def read_data(self , user_input, recommendation_number):
+        """1. Data exploration"""
+        #loading dataset
+        idea_data = pd.read_csv('idea_data/idea_data.csv')
 
-        music_info_dataset = pd.read_csv('data/data.csv')
-        data_w_genre = pd.read_csv('data/data_w_genres.csv')
-        data_w_genre['genres_upd'] = data_w_genre['genres'].apply(lambda x: [re.sub(' ','_',i) for i in re.findall(r"'([^']*)'", x)])
-        music_info_dataset['artists_upd_v1'] = music_info_dataset['artists'].apply(lambda x: re.findall(r"'([^']*)'", x))
-        music_info_dataset[music_info_dataset['artists_upd_v1'].apply(lambda x: not x)].head(5)
-        music_info_dataset['artists_upd_v2'] = music_info_dataset['artists'].apply(lambda x: re.findall('\"(.*?)\"',x))
-        music_info_dataset['artists_upd'] = np.where(music_info_dataset['artists_upd_v1'].apply(lambda x: not x), music_info_dataset['artists_upd_v2'], music_info_dataset['artists_upd_v1'] )
-        music_info_dataset['artists_song'] = music_info_dataset.apply(lambda row: row['artists_upd'][0]+row['name'],axis = 1)
-        music_info_dataset.sort_values(['artists_song','release_date'], ascending = False, inplace = True)
-        music_info_dataset.drop_duplicates('artists_song',inplace = True)
+        #converting string format of Topics to list format
+        idea_data['Topics'] = idea_data['Topics'].apply(lambda x: [re.sub(' ','_',i) for i in re.findall(r"'([^']*)'", x)])
 
-        artists_exploded = music_info_dataset[['artists_upd','id']].explode('artists_upd')
-        artists_exploded_enriched = artists_exploded.merge(data_w_genre, how = 'left', left_on = 'artists_upd',right_on = 'artists')
-        artists_exploded_enriched_nonnull = artists_exploded_enriched[~artists_exploded_enriched.genres_upd.isnull()]
-        artists_genres_consolidated = artists_exploded_enriched_nonnull.groupby('id')['genres_upd'].apply(list).reset_index()
-        artists_genres_consolidated['consolidates_genre_lists'] = artists_genres_consolidated['genres_upd'].apply(lambda x: list(set(list(itertools.chain.from_iterable(x)))))
-
-        music_info_dataset = music_info_dataset.merge(artists_genres_consolidated[['id','consolidates_genre_lists']], on = 'id',how = 'left')
-        music_info_dataset['year'] = music_info_dataset['release_date'].apply(lambda x: x.split('-')[0])
-        float_cols = music_info_dataset.dtypes[music_info_dataset.dtypes == 'float64'].index.values
-        music_info_dataset['popularity_red'] = music_info_dataset['popularity'].apply(lambda x: int(x/5))
-        music_info_dataset['consolidates_genre_lists'] = music_info_dataset['consolidates_genre_lists'].apply(lambda d: d if isinstance(d, list) else [])
-
-        complete_feature_set = self.create_feature_set(music_info_dataset, float_cols=float_cols)
-
-        temp_var = music_info_dataset.to_csv('music_info_dataset.csv', index = True)
-        temp_var = complete_feature_set.to_csv('complete_feature_set.csv', index = True)
-
-        #self.recommend_songs([{'name': 'La Victoire De La Madelon', 'year':1921}],  music_info_dataset , complete_feature_set)
-        recommended_songs_info = self.recommend_songs(user_type_input,  music_info_dataset , complete_feature_set)
-        return recommended_songs_info
+        """2.Now lets do feature generation:
+                a)Normalize float and int variables
+                b)Bucketing of Popularity variable to create 10 classes of values ranging from 0-10.
+                c)One-hot-encoding of Year and Popularity Variables
+                d)Create TF-IDF features of strings in list of column Topics"""
+        
+        # creating 10 point buckets for popularity
+        # Popularity is ranging from 0-100, so int division by 10 will create 10 different classes. 
+        idea_data['Popularity_bucket'] = idea_data['Popularity'].apply(lambda x: int(x/10))
+        feature_columns =['Year','Status','Popularity_bucket','school/institute/job']
+        complete_feature_set_data = self.create_feature_set(idea_data, feature_columns)
+        best_recommendations = self.recommend_songs(user_input,complete_feature_set_data,recommendation_number)
+    
+        return best_recommendations
 
     def one_hot_encoding(self,df, column, new_name): 
     
@@ -56,107 +46,64 @@ class recommendation_system:
         tf_df.reset_index(drop = True, inplace = True)    
         return tf_df
 
-    def create_feature_set(self,df, float_cols):
+    def create_feature_set(self,df, int_float_feature_cols):
+        """
+            Process idea data to create a final set of features that will be used to generate recommendations
+
+            Parameters: 
+                df (pandas dataframe): Idea data
+                int_float_feature_cols (list(str)): List of float columns that will be scaled 
+            
+            Returns: 
+                final: final set of features 
+        """
     
+        #tfidf Topics lists
         tfidf = TfidfVectorizer()
-        tfidf_matrix =  tfidf.fit_transform(df['consolidates_genre_lists'].apply(lambda x: " ".join(x)))
-        genre_df = pd.DataFrame(tfidf_matrix.toarray())
-        genre_df.columns = ['genre' + "|" + i for i in tfidf.get_feature_names()]
-        genre_df.reset_index(drop = True, inplace=True)
-  
-        year_ohe = self.one_hot_encoding(df, 'year','year') * 0.5
-        popularity_ohe = self.one_hot_encoding(df, 'popularity_red','pop') * 0.15
+        tfidf_matrix =  tfidf.fit_transform(df['Topics'].apply(lambda x: " ".join(x)))
+        topics_feature = pd.DataFrame(tfidf_matrix.toarray())
+        topics_feature.columns = ['topic' + "|" + i for i in tfidf.get_feature_names()]
+        topics_feature.reset_index(drop = True, inplace=True)
 
-        floats = df[float_cols].reset_index(drop = True)
+        #explicity_ohe = ohe_prep(df, 'explicit','exp')    
+        year_ohe = self.one_hot_encoding(df, 'Year','year') * 0.15 #scalling down the parameter of year, because it is not as important as topic features
+        popularity_ohe = self.one_hot_encoding(df, 'Popularity_bucket','pop') * 0.25 #scalling down the parameter of Popularity bucket, because it is not as important as topic features
+
+        #scale feature columns
+        features = df[int_float_feature_cols].reset_index(drop = True)
         scaler = MinMaxScaler()
-        floats_scaled = pd.DataFrame(scaler.fit_transform(floats), columns = floats.columns) * 0.2
+        feature_scaled = pd.DataFrame(scaler.fit_transform(features), columns = features.columns) * 0.2 #scalling down these features, because it is not as important as topic features
 
-        final = pd.concat([genre_df, floats_scaled, popularity_ohe, year_ohe], axis = 1)
+        #concanenate all features
+        final = pd.concat([topics_feature, feature_scaled, popularity_ohe, year_ohe], axis = 1)
         
-        final['id']=df['id'].values
+        #adding project name and its topics to feature dataframe, so that human readable outputs could be accessed
+        final['Project_Name']=df['Project_Name'].values
+        final['Topics']=df['Topics'].values
         
         return final
     
-    def name_to_id(self,user_input, music_data):
-        song_id = []
-        try:
-            for song in user_input:
-                
-                song_id.append(music_data[(music_data['year'] == str(song['year'])) & (music_data['name'] == song['name'])].iloc[0:])
-                                    
-            return song_id
+    def user_input_processing(self,user_input,complete_feature_set_data):
         
-        except IndexError:
-            
-            return 0
+        user_input_features = complete_feature_set_data[(complete_feature_set_data['Project_Name'] == user_input)]
+        user_input_features=user_input_features.drop(['Project_Name','Topics'], axis = 1)
+        return user_input_features
 
-    def user_input_feature_formation(self,user_input , music_data , feature_music_data ):
+    def recommend_songs(self,user_input,feature_idea_data,top_recommendations = 5):
 
-        user_song_features =[]
-        song_id = self.name_to_id(user_input, music_data)
-        
-        for ty in song_id:
-            
-            user_song_features.append(feature_music_data[(feature_music_data['id'] == ty['id'].iloc[0])])
-            index = str(feature_music_data[(feature_music_data['id'] == ty['id'].iloc[0])].index)
-            tempi = str()
-            for i in index[12:]:
-                if(i==']'):
-                    break
-                else:
-                    tempi = tempi + i
+        user_input_features = self.user_input_features_data = self.user_input_processing(user_input,feature_idea_data)
 
-            index=int(tempi)
+        #cosine similairity function:      
+        feature_idea_data['similarity_ratio'] = cosine_similarity(feature_idea_data.drop(['Project_Name','Topics'], axis = 1).values, user_input_features.values[0].reshape(1, -1))[:,0]
 
-            user_song_features[0] = user_song_features[0].drop('id', axis = 1)
-            
-        return user_song_features, index
+        best_recommendations = feature_idea_data.sort_values('similarity_ratio',ascending = False)[['Project_Name','Topics']].iloc[1:top_recommendations+1]
 
-
-    def id_to_name_and_year(self,best_recommendations_ids , music_data):
-    
-        recommended_songs_info =[]
-
-        try:
-            for cvb in best_recommendations_ids.iloc[0:]:
-                recommended_songs_info.append(music_data[(music_data['id'] == cvb)][['name','year']])
-            return recommended_songs_info
-        
-        except IndexError:
-            return 0
-
-
-    def recommend_songs(self,user_input , music_data , feature_music_data , top_recommendations = 15):
-
-        user_song_features, index = self.user_input_feature_formation(user_input , music_data , feature_music_data)
-
-        try:
-            feature_music_data_subset = feature_music_data.iloc[index-20000 : index+20000]
-
-        except:
-
-            try:
-                feature_music_data_subset = feature_music_data.iloc[0 : index+20000]
-
-            except:
-                feature_music_data_subset = feature_music_data.iloc[index-20000 : -1 ]
-                
-        feature_music_data_subset['similarity_ratio'] = cosine_similarity(feature_music_data_subset.drop('id', axis = 1).values, user_song_features[0].values.reshape(1, -1))[:,0]
-
-        best_recommendations = feature_music_data_subset.sort_values('similarity_ratio',ascending = False).iloc[1:top_recommendations+1]
-
-        best_recommendations_ids = best_recommendations["id"]
-        
-        recommended_songs_info = self.id_to_name_and_year(best_recommendations_ids, music_data)
-
-        return recommended_songs_info
-
+        return best_recommendations
 
 if __name__ == '__main__':
     recommendation_system_ = recommendation_system()
-    user_typed_input = [{'name': 'La Victoire De La Madelon', 'year':1921}]
-    output = recommendation_system_.read_data(user_typed_input)
-    print(output)
-    #array_data = json.dumps(data, separators=(',',':'))
+    user_typed_input = 'Multiporpose house-hold bot'
+    output = recommendation_system_.read_data(user_typed_input,15)
+    print(tabulate(output, headers='keys', tablefmt='grid', showindex=False))
 
     
